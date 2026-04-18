@@ -14,6 +14,7 @@ flowchart LR
     Client -->|REST + JWT| RC[Racing Core]
     AM -->|gRPC| Auth[Auth Server]
     RC -->|gRPC| Auth
+    RC -->|REST| AM
     AM -->|AMQP| MQ{{RabbitMQ}}
     RC -->|AMQP| MQ
     MQ -->|rollback events| Auth
